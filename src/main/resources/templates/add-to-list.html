@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add to List</title>
+</head>
+<body>
+<h1>Add User to List</h1>
+<p th:text="'Add user: ' + ${user.name} + ' to one of your lists:'"></p>
+<table>
+    <tr>
+        <th>List Name</th>
+        <th></th>
+    </tr>
+    <tr th:each="list : ${lists}">
+        <td th:text="${list.name}"></td>
+        <td><a th:href="@{/add-user-to-list/{listId}/{userId}(listId=${list.id}, userId=${user.id})}">Add to this list</a></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Search Results</title>
+</head>
+<body>
+<h1>Search Results</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>City</th>
+    <th>Price Range</th>
+    <th>Short Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.name}"></td>
+    <td th:text="${user.age}"></td>
+    <td th:text="${user.city}"></td>
+    <td th:text="${user.priceRange}"></td>
+    <td th:text="${user.shortDescription}"></td>
+    <td><a th:href="@{/user/{id}(id=${user.id})}">View More</a></td>
+    <td><a th:href="@{/message/{id}(id=${user.id})}">Send Message</a></td>
+    <td><a th:href="@{/addToList/{id}(id=${user.id})}">+</a></td> <!-- Add to list link -->
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Roommate Finder</title>
+</head>
+<body>
+<h1>Welcome to Roommate Finder!</h1>
+<form name="szukaj" th:action="@{/search}" method="post">
+    <label for="city">Choose a city:</label>
+    <select id="city" name="city">
+        <option th:each="city : ${cities}" th:value="${city}" th:text="${city}"></option>
+    </select>
+    <input type="submit" value="Search">
+</form>
+</body>
+</html>

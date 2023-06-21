@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Registration</title>
+</head>
+<body>
+
+<form th:action="@{/register}" method="post">
+  <div>
+    <label for="login">Usrname:</label>
+    <input type="text" id="login" name="login" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div>
+    <label for="city">City:</label>
+    <select id="city" name="city" required>
+      <option value="">Choose your city</option>
+      <option value="Paris">Paris</option>
+      <option value="London">London</option>
+      <option value="Amsterdam">Amsterdam</option>
+      <option value="Cracow">Cracow</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+  </div>
+  <div>
+    <label for="academicYear">Year of studies:</label>
+    <input type="number" id="academicYear" name="academicYear" required>
+  </div>
+  <div>
+    <label for="priceRange">Maximum price($):</label>
+    <input type="text" id="priceRange" name="priceRange" required>
+  </div>
+  <div>
+    <label for="shortDescription">Short description:</label>
+    <input type="text" id="shortDescription" name="shortDescription" required>
+  </div>
+  <div>
+    <label for="longDescription">Long description:</label>
+    <textarea id="longDescription" name="longDescription" required></textarea>
+  </div>
+  <div>
+    <label for="contactInformation">Contact info:</label>
+    <input type="text" id="contactInformation" name="contactInformation" required>
+  </div>
+  <div>
+    <button type="submit">Register</button>
+  </div>
+</form>
+
+</body>
+</html>

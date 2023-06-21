@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>My Lists</title>
+</head>
+<body>
+<h1>My Lists</h1>
+<table>
+  <tr>
+    <th>List ID</th>
+    <th>Actions</th>
+  </tr>
+  <tr th:each="list : ${lists}">
+    <td th:text="${list.id}"></td>
+    <td>
+      <a th:href="@{/list/{id}(id=${list.id})}">View</a>
+      <!-- Add more actions as needed -->
+    </td>
+  </tr>
+</table>
+<form th:action="@{/user/{userId}/lists/add(userId=${userId})}" method="post">
+  <input type="submit" value="Add List">
+</form>
+</body>
+</html>
